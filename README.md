@@ -1,6 +1,6 @@
-🌤️ Weatherly — Smart Weather Dashboard
+🌤️ Weatherly - Smart Weather Dashboard
 
-A responsive, single-page weather dashboard that shows current conditions, a 5-day forecast, UV index, sunrise/sunset times, and a live clock for any city — with light/dark themes, unit switching, and search history. Built with vanilla JS, jQuery, and the OpenWeatherMap API.
+A responsive, single page weather dashboard that shows current conditions, a 5 day forecast, UV index, sunrise/sunset times, and a live clock for any city — with light/dark themes, unit switching, and search history. Built with vanilla JS, jQuery, and the OpenWeatherMap API.
 
 ---
 
