@@ -1,0 +1,392 @@
+/* Theme Palette Definitions */
+body.dark-theme {
+  --bg-main: #0f172a;
+  --bg-gradient: radial-gradient(at 15% 15%, rgba(56, 189, 248, 0.15) 0px, transparent 45%),
+                 radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 40%),
+                 radial-gradient(at 50% 80%, rgba(14, 165, 233, 0.12) 0px, transparent 50%);
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --box-bg: rgba(15, 23, 42, 0.4);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #38bdf8;
+  --accent-hover: #0284c7;
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --history-item-bg: rgba(255, 255, 255, 0.04);
+}
+
+body.light-theme {
+  --bg-main: #f1f5f9;
+  --bg-gradient: radial-gradient(at 15% 15%, rgba(56, 189, 248, 0.25) 0px, transparent 45%),
+                 radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 40%),
+                 radial-gradient(at 50% 80%, rgba(14, 165, 233, 0.2) 0px, transparent 50%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --box-bg: rgba(241, 245, 249, 0.8);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent-color: #0284c7;
+  --accent-hover: #0369a1;
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --history-item-bg: rgba(0, 0, 0, 0.03);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 2rem 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Header */
+.brand-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.date-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.clock-subtitle {
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Theme Toggle Button */
+.btn-theme-toggle {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-theme-toggle:hover {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent-color);
+}
+
+/* Unit Switch Toggle */
+.unit-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card-bg);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+}
+
+.unit-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(125, 125, 125, 0.25);
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--accent-color);
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background-color: rgba(56, 189, 248, 0.2);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 22px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Form & Inputs */
+.search-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.custom-input {
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary) !important;
+  border-radius: 8px 0 0 8px !important;
+}
+
+.custom-input:focus {
+  background: var(--input-bg);
+  border-color: var(--accent-color);
+  box-shadow: none;
+}
+
+.btn-accent {
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+/* Autocomplete Dropdown */
+.ui-autocomplete {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 8px !important;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1050 !important;
+  padding: 0.5rem 0;
+}
+
+.ui-menu-item-wrapper {
+  color: var(--text-primary) !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem;
+  border: none !important;
+}
+
+.ui-menu-item-wrapper.ui-state-active {
+  background: rgba(56, 189, 248, 0.2) !important;
+  color: var(--accent-color) !important;
+  border-radius: 4px;
+}
+
+/* Recent Searches */
+.history-title {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.clear-history-btn {
+  font-size: 0.75rem;
+  color: #ef4444;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.clear-history-btn:hover {
+  opacity: 0.8;
+}
+
+.history-item {
+  background: var(--history-item-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.history-item:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Weather Dashboard Display */
+.city-name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.weather-condition-tag {
+  display: inline-block;
+  background: var(--box-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  border: 1px solid var(--card-border);
+}
+
+.current-weather-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.metric-box {
+  background: var(--box-bg);
+  border: 1px solid var(--card-border);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: block;
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.uv-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* 5-Day Forecast Grid */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.forecast-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-4px);
+}
+
+.forecast-date {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.forecast-year {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.forecast-icon {
+  font-size: 1.75rem;
+  color: var(--accent-color);
+  display: block;
+}
+
+.forecast-cond {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.forecast-temp {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.forecast-sub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* UV Colors */
+.bg-success { background-color: #10b981 !important; }
+.bg-warning { background-color: #f59e0b !important; color: #000 !important; }
+.bg-danger { background-color: #ef4444 !important; }
