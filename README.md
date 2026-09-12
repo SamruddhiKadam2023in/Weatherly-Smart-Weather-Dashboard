@@ -1,6 +1,6 @@
 🌤️ Weatherly - Smart Weather Dashboard
 
-A responsive, single page weather dashboard that shows current conditions, a 5 day forecast, UV index, sunrise/sunset times, and a live clock for any city — with light/dark themes, unit switching, and search history. Built with vanilla JS, jQuery, and the OpenWeatherMap API.
+A responsive, single page weather dashboard that shows current conditions, a 5 day forecast, UV index, sunrise/sunset times, and a live clock for any city with light/dark themes, unit switching, and search history. Built with vanilla JS, jQuery, and the OpenWeatherMap API.
 
 ---
 
@@ -12,15 +12,15 @@ Weatherly lets users search for any city and instantly view its current weather 
 
 ✨ Features
 
-- 🔍 **City search with autocomplete** — powered by the OpenWeatherMap Geocoding API
-- 🌡️ **Current weather metrics** — temperature, humidity, wind speed, UV index (color-coded by severity), sunrise & sunset times
-- 📅 **5-day forecast** — displayed as individual forecast cards with date, condition, icon, temperature, and humidity
-- 🌗 **Day/night-aware icons** — weather icons switch between sun/moon variants based on the time of day
-- 🕒 **Live clock** — real-time updating clock in the header
+- 🔍 **City search with autocomplete** : powered by the OpenWeatherMap Geocoding API
+- 🌡️ **Current weather metrics** : temperature, humidity, wind speed, UV index (color-coded by severity), sunrise & sunset times
+- 📅 **5-day forecast** : displayed as individual forecast cards with date, condition, icon, temperature, and humidity
+- 🌗 **Day/night-aware icons** : weather icons switch between sun/moon variants based on the time of day
+- 🕒 **Live clock** : real-time updating clock in the header
 - 🌓 **Dark / Light theme toggle**
 - 🌡️ **Imperial / Metric unit toggle** (°F ↔ °C)
-- 🕘 **Search history** — recently searched cities are saved locally and can be revisited or cleared
-- 📱 **Responsive layout** — collapsible search history panel on smaller screens
+- 🕘 **Search history** : recently searched cities are saved locally and can be revisited or cleared
+- 📱 **Responsive layout** : collapsible search history panel on smaller screens
 
 ---
 
@@ -77,7 +77,7 @@ Smart_Weather_Dashboard/
      npx serve .
      ```
 
-No installation of dependencies is needed — all libraries (jQuery, jQuery UI, Bootstrap, Day.js, Font Awesome) are loaded via CDN in `index.html`.
+No installation of dependencies is needed, all libraries (jQuery, jQuery UI, Bootstrap, Day.js, Font Awesome) are loaded via CDN in `index.html`.
 
 ---
 
